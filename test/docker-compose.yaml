@@ -1,0 +1,11 @@
+services:
+  elasticsearch:
+    image: elasticsearch:7.9.3
+    ports:
+      - 9200:9200
+      - 9300:9300
+    environment:
+      discovery.type: single-node
+      xpack.security.enabled: 'true'
+      xpack.security.authc.api_key.enabled: 'true'
+      ELASTIC_PASSWORD: nope
